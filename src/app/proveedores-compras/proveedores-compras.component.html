@@ -1,0 +1,87 @@
+<div class="page">
+    <div class="container flex-cont">
+        <div class="flex-cont ft-colum">
+            <div class="container ft-cont">
+                <div class="head-cont">
+                    <strong>Datos del producto</strong>
+
+                </div>
+                <hr>
+                <form action="" id="datos_product">
+                    <input id="inp_nombre" type="text" placeholder="Nombre del producto">
+                    <input id="inp_marca" type="text" placeholder="Marca">
+                    <input id="inp_modelo" type="text" placeholder="Modelo">
+                    <input id="inp_precio" type="text" placeholder="precio">
+                    <input id="inp_cantidad" type="text" placeholder="Cantidad">
+                    <hr>
+                    <div class="head-cont ft-dat">
+                        <button (click)="enlistarProducto()" class="button_blue" type="submit">Agregar a la
+                            lista</button>
+                    </div>
+                </form>
+
+
+
+            </div>
+
+            <div class="container ft-cont">
+                <table>
+                    <thead>
+                        <th>Nombre del producto</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+
+                    </thead>
+                    <tr *ngFor="let prod of listaProd">
+                        <td> {{prod.nombre}} </td>
+                        <td> {{prod.marca}} </td>
+                        <td> {{prod.modelo}}</td>
+                        <td> {{prod.precio}}</td>
+                        <td> {{prod.cantidad}}</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td><strong>Total: </strong> </td>
+                        <td> <strong>${{total}}</strong> </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+        <div class="flex-cont ft-colum ft-prov">
+            <div class="item_date">
+                <a routerLink="/lista-proveedores" class="btn-list butt-comp">Ver lista
+                    proveedores</a>
+                <a routerLink="/lista-cotizaciones" class="btn-list butt-comp">Ver lista de
+                    cotizaciones</a>
+                <a routerLink="/lista-ordenes" class="btn-list butt-comp">Ver lista de
+                    ordenes</a>
+            </div>
+            <div class="">
+                <div class="prov_box">
+                    <div id="text_date">
+                        Datos del proveedor:
+                    </div>
+                    <form action="" class="item_date">
+                        <input id="nombre_prov" type="text" placeholder="Nombre">
+                        <input id="identificacion_prov" type="text" placeholder="Identificacion / NIT">
+                        <input id="telelefono_prov" type="text" placeholder="Telefono">
+                        <div class="button_container">
+                            <button (click)="crearCotizacion()" class="button_yellow"> Generar Cotización</button>
+                            <button (click)="crearOrden()" class="button_green"> Generar Orden</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

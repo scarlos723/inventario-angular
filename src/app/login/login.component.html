@@ -1,0 +1,33 @@
+
+<div class="page">
+    <div class="section login_ft">
+        <div class="login_box">
+            <div id="text_login">
+                Login
+            </div>
+
+
+            
+
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="item_login" >
+                    <div class="form-group">
+                        <input type="tex" class="form-control" formControlName="username" required placeholder="usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="password" required placeholder="contraseña">
+                    </div>
+                    <button type="submit" [disabled]="!loginForm.valid" class="button_blue">Ingresar</button>
+                </form>
+            
+            <!-- <div [FormGroup]="logForm" class="item_login" >
+
+                <input  type="text" placeholder="Usuario"        formControlName="user">
+
+                <input  type="password" placeholder="Contraseña" formControlName="pass">
+
+                <button (click)="login()" class="button_blue"> ingresar</button>
+
+            </div> -->
+        </div>
+    </div>
+</div>

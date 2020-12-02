@@ -1,0 +1,28 @@
+<div class="page">
+
+    <div class="container ft-center" >
+        <div class="head-cont">
+            <strong>Clientes </strong>
+            <input class="head-cont" type="text" placeholder="buscar" [(ngModel)]="query">
+        </div>
+        <table id="websendeos">
+            <thead>
+                <th>Identificación</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+
+            </thead>
+            <tr  *ngFor = 'let cliente of clientes | search:query'>
+                <td> <a routerLink="/ver-cliente/{{cliente.id}}">{{cliente.cedula}}</a> </td>
+                <td>  {{cliente.nombres}}   </td>
+                <td> {{cliente.apellidos}} </td>
+                <td> <button class="button_gray" onclick="location.href='ver_cliente.html'">Ver</button> <button class="button_blue"> modificar</button> <button class="button_red">eliminar</button></td>
+            </tr>
+           
+        </table>
+
+    </div>
+
+
+</div>

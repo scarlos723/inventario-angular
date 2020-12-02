@@ -1,0 +1,28 @@
+<div class="page">
+
+    <div class="container ft-center">
+        <div class="head-cont">
+            <strong>Proveedores </strong>
+            <input class="head-cont" type="text" placeholder="buscar" [(ngModel)]="query">
+        </div>
+        <table >
+            <thead>
+                <th>Identificación o NIT</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Acciones</th>
+
+            </thead>
+            <tr *ngFor="let proveedor of proveedores | search:query">
+                <td> <a routerLink="/ver-proveedor/{{proveedor.id}}"> {{proveedor.nit}}</a> </td>
+                <td> {{proveedor.nombre}} </td>
+                <td> {{proveedor.telefono}} </td>
+                <td> <button class="button_gray" onclick="location.href='ver_proveedor.html'">Ver</button> <button class="button_blue"> modificar</button> <button class="button_red">eliminar</button></td>
+            </tr>
+           
+        </table>
+
+    </div>
+
+
+</div>

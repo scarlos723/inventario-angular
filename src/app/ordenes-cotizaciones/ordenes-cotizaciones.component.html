@@ -1,0 +1,90 @@
+<div class="container ft-cont">
+    <div class="head-cont">
+        <strong>Productos en stock </strong>
+        <input class="head-cont" type="text"  placeholder="buscar" [(ngModel)]="query">
+    </div>
+    <table>
+        <thead>
+            <th>Código</th>
+            <th>Nombre del producto</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ubicación</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+
+        </thead>
+        <tr *ngFor="let producto of productos | search:query">
+            <td>{{producto.id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.marca}} </td>
+            <td>{{producto.modelo}} </td>
+            <td>{{producto.ubicacion}}</td>
+            <td> ${{producto.precio}}</td>
+            <td>{{producto.stock}}</td>
+            <td><button (click)="agregarAlCarrito(producto.id)" class="button_blue"> Agregar</button></td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div class="ft-button">
+    <a class="btn-list" routerLink="/lista-ordenes">Ver listado Ordenes</a>
+    <a class="btn-list" routerLink="/lista-cotizaciones">Ver listado Contizaciones</a>
+    <a class="btn-list" routerLink="/lista-clientes">Ver listado Clientes</a>
+</div>
+
+
+<div class="container ft-cont">
+
+    <div class="head-cont">
+        <strong> Productos en stock </strong>
+
+    </div>
+    <div class="cotiza_container">
+        <table >
+            <thead>
+                <th>Código</th>
+                <th>Nombre del producto</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+
+            </thead>
+            <tr *ngFor="let car of carrito ">
+                <td>{{car.id}}</td>
+                <td> {{car.nombre}} </td>
+                <td> {{car.marca}} </td>
+                <td> ${{car.precio}} </td>
+                <td> <input id="precio" type="text" value="1" ></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td> </td>
+                <td> TOTAL </td>
+                <td> ${{total}} </td>
+                <td> </td>
+            </tr>
+           <button (click)="calcularTotal()">calcularTotal</button>
+        </table>
+
+        <div class="date_box">
+            <div id="text_date">
+                Datos del cliente:
+            </div>
+            <form action="" class="item_date">
+                <input id="nombre_cliente" type="text" placeholder="Nombre">
+                <input id="apellido_cliente" type="text" placeholder="Apellido">
+                <input id="identificacion_cliente" type="text" placeholder="Identificacion">
+                <input id="telefono_cliente" type="text" placeholder="Telefono">
+                <div class="button_container">
+                    <button (click)="generarCotizacion()" class="button_yellow"> Generar Cotización</button>
+                    <button (click)="generarOrden()" class="button_green"> Generar Orden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

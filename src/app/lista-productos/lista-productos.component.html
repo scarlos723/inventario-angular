@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="head-cont">
+        <strong>Productos </strong>
+        <input class="head-cont" type="text" placeholder="buscar" [(ngModel)]="query" >
+    </div>
+    <table>
+        <thead>
+            <th>Código</th>
+            <th>Nombre del producto</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Ubicación</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </thead>
+
+        <tr *ngFor="let producto of productos | search: query ; let i = index">
+            <td>
+                <p class="modify_product">  <input id="fila_{{producto.id}}" style="display: none;" type="text" value="{{producto.id}}" > </p>
+                <p id="fila_aux_{{producto.id}}" >{{producto.id}}</p>
+            </td>
+            <td>
+                <p class="modify_product" > <input id="fila_{{producto.id}}"  style="display: none;" type="text" value="{{producto.nombre}}"   > </p>
+                <p id="fila_aux_{{producto.id}}" >{{producto.nombre}}</p>
+            </td>
+            <td>
+                <p class="modify_product" > <input id="fila_{{producto.id}}"  style="display: none;" type="text" value="{{producto.marca}}"    > </p>
+                <p id="fila_aux_{{producto.id}}" >{{producto.marca}}</p>
+                
+            </td>
+            <td>
+                <p class="modify_product" > <input id="fila_{{producto.id}}"  style="display: none;" type="text" value="{{producto.modelo}}"   > </p>
+                <p id="fila_aux_{{producto.id}}" >{{producto.modelo}}</p>
+                
+            </td>
+            <td>
+                <p class="modify_product" > <input id="fila_{{producto.id}}"  style="display: none;" type="text" value="{{producto.ubicacion}}"> </p>
+                <p id="fila_aux_{{producto.id}}" >{{producto.ubicacion}}</p>
+                
+            </td>
+            <td> 
+                <p class="modify_product" > <input id="fila_{{producto.id}}"  style="display: none;" type="text" value="{{producto.precio}}"  > </p>
+                <p id="fila_aux_{{producto.id}}" >${{producto.precio}}</p>
+                
+
+            </td>
+            <td>
+                <button #bluebtn value="{{producto.id}}" class="button_blue" id ="btn_blue_{{producto.id}}" (click)="modificarAction(producto.id)"> Modificar</button>
+                <button class="button_red" id="btn_red_{{producto.id}}" (click)="eliminarProducto(producto.id)" >Eliminar</button>
+                <button class="button_green" id="btn_green_{{producto.id}}" (click)="aplicarCambio(producto.id)" style="display: none;">Aplicar</button>
+            </td>
+        </tr>
+
+    </table>
+
+   
+
+</div>

@@ -1,0 +1,52 @@
+<div class="page">
+
+    <div class="container ft-center">
+        <div class="head-cont">
+            <strong>Cotizaciones </strong>
+            <input class="head-cont" type="text" placeholder="buscar" [(ngModel)]="query">
+        </div>
+        <table id="websendeos">
+            <thead>
+                <th>No. Cotizacion</th>
+                <th>Tipo de orden</th>
+                <th>Cliente/Proveedor</th>
+                <th>Valor</th>
+                
+                <th>Acciones</th>
+
+            </thead>
+            <tr *ngFor="let cotizacion of cotizaciones | search:query">
+                <td>
+                    <p class="modify_product">  <input id="fila_{{cotizacion.id}}" style="display: none;" type="text" value="{{cotizacion.id}}" > </p>
+                    <p id="fila_aux_{{cotizacion.id}}">{{cotizacion.id}} </p>
+                    
+                </td>
+                <td> 
+                    <p class="modify_product">  <input id="fila_{{cotizacion.id}}" style="display: none;" type="text" value="{{cotizacion.tipo}}" > </p>
+                    <p id="fila_aux_{{cotizacion.id}}">{{cotizacion.tipo}}  </p>
+                    
+                </td>
+                <td> 
+                    <p class="modify_product">  <input id="fila_{{cotizacion.id}}" style="display: none;" type="text" value="{{cotizacion.nombreCliente}}" > </p>
+                    <p id="fila_aux_{{cotizacion.id}}">{{cotizacion.nombreCliente}}</p>
+                     
+                </td>
+                <td> 
+                    <p class="modify_product">  <input id="fila_{{cotizacion.id}}" style="display: none;" type="text" value="${{cotizacion.valor}}" > </p>
+                    <p id="fila_aux_{{cotizacion.id}}">{{cotizacion.nombreCliente}}</p>
+                    
+                </td>
+
+                <td>
+                    <button class="button_blue" id ="btn_blue_{{cotizacion.id}}" (click)="modificarAction(cotizacion.id)"> modificar</button> 
+                    <button class="button_red" id ="btn_red_{{cotizacion.id}}" (click) = "eliminarItem(cotizacion.id)" >eliminar</button>
+                    <button class="button_green" id="btn_green_{{cotizacion.id}}" style="display: none;" (click)="aplicarCambio(cotizacion.id)" >aplicar</button>
+                </td>
+            </tr>
+            
+        </table>
+
+    </div>
+
+
+</div>

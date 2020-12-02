@@ -1,0 +1,53 @@
+/* Estilos de cards */
+.card{
+    display: flex;
+    height: 260px;
+    width: 380px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px 100px;
+    padding: 10px;
+    flex-direction: column;
+
+    border: 1px solid #C6C6C6;
+    box-shadow: 3px 5px 5px 1px #C6C6C6;
+
+}
+.card-box{
+    display: flex; 
+    margin: 10px 0px; 
+}
+
+.ft-just-right{
+    justify-content: center;
+    text-align: right;
+    
+    width: 100%;
+}
+.card-box>img{
+    width: 100px;
+    height: 100px;
+}
+.button-card-box{
+    display: flex;
+    
+    
+    justify-content: space-between;
+    width: 70%;
+}
+.ft-just-center{
+    justify-content: center;
+}
+ .card-box>p{
+     margin: 3px;
+ } 
+ .card > p{
+        margin: 3px;
+ }
+
+ .ft-cards{
+    display:flex ;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,62 @@
+<div class="page">
+
+    <div class="container_flex">
+        <div class="box-client">
+            <img src="assets/img/user2.svg" alt="">
+        </div>
+
+        <div class="box-client  ft-mid">
+            <div id="text_date">
+                Datos del cliente:
+            </div>
+            <form action="" class="item_client">
+                <p> Nombre <input id="nombre_client" type="text" value="{{cliente.nombres}}"></p>
+                <p> Apellido <input id="apellido_client" type="text" value="{{cliente.apellidos}}"></p>
+                <p> Identificación <input id="identificacion_client" type="text" value="{{cliente.cedula}}"></p>
+                <p> Telefono <input id="telefono_client" type="text" value="{{cliente.telefono}} "></p>
+            </form>
+
+        </div>
+        <div class="box-client ft-end">
+            <button class="button_blue" (click)="actualizarItem(cliente.id)"> Actualizar </button>
+
+        </div>
+
+    </div>
+
+    <div class="container_flex ft-colum">
+        <div class="head-cont">
+            <strong>Ordenes </strong>
+            <input class="head-cont" type="text" value="buscar">
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <th>No.Orden</th>
+                    <th>Tipo de orden</th>
+                    <th>Valor</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </thead>
+                <tr  *ngFor ="let orden of ordenes" >
+                    <td>{{orden.id}}</td>
+                    <td> {{orden.tipo}} </td>
+                    <td> {{orden.valor}}</td>
+                    <td> {{orden.estado}}</td>
+                    <td>
+                        <button class="button_blue"> modificar</button> 
+                        <button class="button_red">eliminar</button>
+                    </td>
+                </tr>
+
+                
+            </table>
+        </div>
+    </div>
+
+
+ 
+
+</div>

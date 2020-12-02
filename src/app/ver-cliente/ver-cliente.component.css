@@ -1,0 +1,88 @@
+.container_flex{
+    display: flex;
+    
+    
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px 0px;
+    padding: 8px;
+    border: 1px solid gray;
+    box-shadow: 3px 5px 5px 1px #C6C6C6;
+
+}
+
+.box-client{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    width: 400px;
+
+}
+
+.ft-mid{
+    width: 600px;
+    
+}
+
+
+.item_client{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: left;
+    margin: 5px;
+}
+form>p{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    
+
+}
+
+.box-client>img{  
+    width: 200px;
+    height: 200px;  
+
+}
+.ft-end{
+    justify-content: end;
+}
+.ft-row-cont{
+    flex-direction: row-reverse;
+    width: 100%;
+    
+}
+.ft-colum{
+    flex-direction: column;
+    
+}
+
+
+/* Estilos de tabla */
+
+table{
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+th , td{
+    padding: 10px;
+}
+table tr:nth-child(odd){
+    background-color: #E1DEDE;
+}
+thead{
+    background-color: #F6F6F6;
+    border-bottom: solid 4px;
+}
+td>input{
+    width:40px ;
+    text-align: center;
+}

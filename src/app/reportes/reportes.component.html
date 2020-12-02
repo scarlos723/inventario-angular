@@ -1,0 +1,120 @@
+<div class="page">
+
+    <div class="container ft-cards">
+        <div class="card">
+            <p>Ventas totales</p>
+            <p> <strong>${{cardVentas.ventasTotales}}</strong> </p>
+
+
+            <div class="card-box">
+                <div class="card-box">
+                    <img src="assets/img/coin.svg">
+                </div>
+                <div class="card-box ft-colum ft-just-right">
+                    <p> Clientes</p>
+                    <p> <strong>{{cardVentas.clientes}} </strong> </p>
+                    <p>Productos vendidos</p>
+                    <p> <strong> {{cardVentas.productos}}</strong> </p>
+                </div>
+            </div>
+
+            <hr>
+            <div class="card-box ft-just-center">
+                <div class="button-card-box">
+                    <button (click)="actualizarVentas()" class="button_blue ft-button-card">Actualizar</button>
+                    <button class="button_blue ft-button-card"> imprimir</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="card">
+            <p>Compras totales</p>
+            <p> <strong>${{cardCompras.comprasTotales}}</strong> </p>
+
+
+            <div class="card-box">
+                <div class="card-box">
+                    <img src="assets/img/shopping_cart.svg">
+                </div>
+                <div class="card-box ft-colum ft-just-right">
+                    <p> Proveedores</p>
+                    <p> <strong>{{cardCompras.proveedores}} </strong> </p>
+                    <p>Productos comprados</p>
+                    <p> <strong> {{cardCompras.productos}}</strong> </p>
+                </div>
+            </div>
+
+            <hr>
+            <div class="card-box ft-just-center">
+                <div class="button-card-box">
+                    <button (click)="actualizarCompras()" class="button_blue ft-button-card">Actualizar</button>
+                    <button class="button_blue ft-button-card"> imprimir</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <p>Ordenes de trabajo</p>
+            <p> <strong>{{cardOrdenes.ordenesTotales}}</strong> </p>
+
+
+            <div class="card-box">
+                <div class="card-box">
+                    <img src="assets/img/reports.svg">
+                </div>
+                <div class="card-box ft-colum ft-just-right">
+                    <p> Terminadas</p>
+                    <p> <strong> {{cardOrdenes.terminadas}}</strong> </p>
+                    <p>En proceso</p>
+                    <p> <strong> {{cardOrdenes.enProceso}}</strong> </p>
+                </div>
+            </div>
+
+            <hr>
+            <div class="card-box ft-just-center">
+                <div class="button-card-box">
+                    <button class="button_blue ft-button-card">Actualizar</button>
+                    <button class="button_blue ft-button-card" onclick="location.href='lista_ordenes.html'">Ver ordenes</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+            
+            <p>Inventario</p>
+            <p> <strong>{{cardInventario.inventarioTotal}}</strong> </p>
+
+
+            <div class="card-box">
+                <div class="card-box">
+                    <img src="assets/img/inventory.svg">
+                </div>
+                <div class="card-box ft-colum ft-just-right">
+                    <p>Productos en bodega</p>
+                    <p> <strong>{{cardInventario.bodega}} </strong> </p>
+                    <p>Productos en vitrina</p>
+                    <p> <strong> {{cardInventario.vitrina}}</strong> </p>
+                </div>
+            </div>
+
+            <hr>
+            <div class="card-box ft-just-center">
+                <div class="button-card-box">
+                    <button class="button_blue ft-button-card">Actualizar</button>
+                    <button class="button_blue ft-button-card"> imprimir</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
